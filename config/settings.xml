@@ -5,6 +5,15 @@
         <setting name="fb_showPhrase" type="yesno">
             <defaultvalue>1</defaultvalue>
         </setting>
+	    <setting name="fb_appid" type="text">
+		    <defaultvalue></defaultvalue>
+	    </setting>
+	    <setting name="fb_secretkey" type="text">
+		    <defaultvalue></defaultvalue>
+	    </setting>
+	    <setting name="fb_pageid" type="text">
+		    <defaultvalue></defaultvalue>
+	    </setting>
     </group>
 
 </swiftsettings>

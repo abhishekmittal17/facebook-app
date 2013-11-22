@@ -29,39 +29,39 @@ class SWIFT_SetupDatabase_Facebook extends SWIFT_SetupDatabase
         return true;
     }
 
-    public function Install($_pageIndex)
-    {
-        parent::Install($_pageIndex);
-        $this->ImportSettings();
-        return true;
-    }
-
-    public function Uninstall()
-    {
-        parent::Uninstall();
-        return true;
-    }
-
-    public function Upgrade()
-    {
-        $this->ImportSettings();
-        return parent::Upgrade();
-    }
-
-
-
-
-    public function LoadTables()
-    {
-
-        return true;
-    }
-
-    private function ImportSettings()
-    {
-        $this->Load->Library('Settings:SettingsManager');
-        $this->SettingsManager->Import('./'.SWIFT_APPSDIRECTORY.'/facebook/config/settings.xml');
-    }
+//    public function Install($_pageIndex)
+//    {
+//        parent::Install($_pageIndex);
+//        //$this->ImportSettings();
+//        return true;
+//    }
+//
+//    public function Uninstall()
+//    {
+//        parent::Uninstall();
+//        return true;
+//    }
+//
+//    public function Upgrade()
+//    {
+//       // $this->ImportSettings();
+//        return parent::Upgrade();
+//    }
+//
+//
+//
+//
+//    public function LoadTables()
+//    {
+//
+//        return true;
+//    }
+//
+//    private function ImportSettings()
+//    {
+//        $this->Load->Library('Settings:SettingsManager');
+//        $this->SettingsManager->Import('./'.SWIFT_APPSDIRECTORY.'/facebook/config/settings.xml');
+//    }
 }
 
 ?>

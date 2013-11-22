@@ -21,5 +21,7 @@ $__LANG = array (
     "fb_name" => "Facebook Integration",
     "fb_settingName" => "Settings",
     "fb_submitExample" => "Submit",
+
+
 );
 ?>
