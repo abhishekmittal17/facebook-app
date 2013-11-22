@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swiftsettings>
+    <group name="settings_fb" app="facebook" ishidden="0">
+        <setting name="fb_general" type="title" />
+        <setting name="fb_showPhrase" type="yesno">
+            <defaultvalue>1</defaultvalue>
+        </setting>
+    </group>
+
+</swiftsettings>

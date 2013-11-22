@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <title>Facebook Integration</title>
+    <description>Facebook Integration - Convert facebook page past as Ticket in kayako helpdesk</description>
+    <author>Abhishek</author>
+    <version>1</version>
+    <tabs>
+        <tab type='admin' title='Facebook Integration' id='111' width='100' permission='false'>
+            <tabitem link='/facebook/SettingsManager/Index'>Settings...</tabitem>
+            <tabitem link='/facebook/Facebook/Render'>Facebook Integration</tabitem>
+            <tabitem link='/facebook/Facebook/SubmitExample'>Submit Example</tabitem>
+        </tab>
+    </tabs>
+</config>
