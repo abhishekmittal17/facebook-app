@@ -29,6 +29,18 @@ class SWIFT_SetupDatabase_Facebook extends SWIFT_SetupDatabase
         return true;
     }
 
+//	public function Install($_pageIndex)
+//	{
+//		parent::Install($_pageIndex);
+//
+//		/**
+//		 * Cron
+//		 */
+//		SWIFT_Cron::Create('cronfetchfacebookfeed', APP_FACEBOOK, 'FacebookMinute', 'Index', '0', '0', '-1', true);
+//
+//		return true;
+//	}
+
 //    public function Install($_pageIndex)
 //    {
 //        parent::Install($_pageIndex);
@@ -51,11 +63,13 @@ class SWIFT_SetupDatabase_Facebook extends SWIFT_SetupDatabase
 //
 //
 //
-//    public function LoadTables()
-//    {
-//
-//        return true;
-//    }
+    public function LoadTables()
+    {
+		$this->AddTable('facebook', new SWIFT_SetupDatabaseTable(TABLE_PREFIX . "facebook", "facebookpostid C(255),
+																ticketid I DEFAULT '0' NOTNULL"));
+
+        return true;
+    }
 //
 //    private function ImportSettings()
 //    {

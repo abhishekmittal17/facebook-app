@@ -1,0 +1,33 @@
+<?php
+
+//$_FB = new SWIFT_Facebook();
+$_ticketID = 0;
+foreach ($_GET as $_k => $_val)
+{
+	$_url = explode('/', $_k);
+	$_ticketID = $_url[4];
+	break;
+}
+
+require_once './' . SWIFT_APPSDIRECTORY . '/facebook/' . SWIFT_THIRDPARTYDIRECTORY . '/sdk/facebook.php';
+$FB = new Facebook(array(
+							  'appId'  => $this->Settings->Get('fb_appid'),
+							  'secret' => $this->Settings->Get('fb_secretkey'),
+						 ));
+
+try {
+	$params = array(
+		'access_token' => 'CAAT0w1128cwBAKNneUkthEv31d4j2lRelDv8NioXYC9abDPeq5ukkSW3n46hZAtDhrXns43sL4bWX5OZBoKsBKEUdJHRbkjAmRyB1RRGzW5XRRkSJCOdg22a9KoNOunhhTx9qZAc9xYPfxm2X5xvZAJfEFG1TIwIy5qZCs8GGFufane12uiiU8lBFSpEGd0mcOgJZCahk4jAZDZD',
+		'message'      => $_POST['replycontents'],
+	);
+
+	$_data = $this->Database->QueryFetch("SELECT facebookpostid from swfacebook where ticketid =" . intval($_ticketID));
+	$_post  = $FB->api("/".$_data['facebookpostid']."/comments", "POST", $params);
+
+
+} catch (FacebookApiException $e) {
+	$result = $e->getResult();
+	echo "<pre>";
+	print_r($result);
+	die;
+}
